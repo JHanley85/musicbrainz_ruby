@@ -1,10 +1,14 @@
 module MusicBrainz
 	class InstallGenerator < ::Rails::Generators::Base
 		desc "Installs String Methods for Musicbrainz"
-		path= File.expand_path("../templates", __FILE__)
 
-		create_file 'config/initializers/musicbrainz.rb', File.read("#{path}/config/initializers/musicbrainz_ruby.rb")
+		def self.source_root
+			File.expand_path("../templates", __FILE__)
+		end
 
+		def create_initializer
+			template 'config/initializers/musicbrainz.rb.erb', 'config/initializers/musicbrainz.rb'
+		end
 	end
 
-	end
+end

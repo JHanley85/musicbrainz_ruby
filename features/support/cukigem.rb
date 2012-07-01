@@ -7,9 +7,9 @@ class Cukigem
     end
   end
 
-  self.project_root = File.expand_path(File.join(File.dirname(__FILE__), '..', '..')).freeze
+  self.project_root = File.expand_path(File.join(File.dirname(__FILE__), '..','..', '..')).freeze
   #Now, below I'm referencing to a symbolic link, outside of the rails application.
-  self.temp_root = File.join(project_root, "../non_rails_tmp").freeze
+  self.temp_root = File.join(project_root, "/non_rails_tmp").freeze
   self.application_name = "rails_app".freeze
 
   self.paths_to_clear = %w[

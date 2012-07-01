@@ -15,12 +15,18 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "musicbrainz_ruby"
-  gem.homepage = "http://github.com/JHanley85/musicbrainz_ruby"
+  gem.homepage = "http://ror.caged-media.com"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "jack@caged-media.com"
+  gem.summary = "Make Musicbrainz API calls within RoR"
+  gem.description = "Musicbrainz.org API Ruby Implementation"
+  gem.email = ["jack@caged-media.com"]
   gem.authors = ["Jack"]
+  gem.files.exclude 'tmp'
+  gem.files = `git ls-files`.split($\)
+  gem.executables = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
+  gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
+
+  gem.require_paths = ["lib"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

@@ -17,3 +17,4 @@ require 'musicbrainz/release_group.rb'
 
 require 'musicbrainz/work.rb'
 require 'musicbrainz/query.rb'
+require 'generators/musicbrainz_ruby'

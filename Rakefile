@@ -21,7 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = "Musicbrainz.org API Ruby Implementation"
   gem.email = ["jack@caged-media.com"]
   gem.authors = ["Jack"]
-  gem.files.exclude 'tmp'
+  gem.files.exclude 'tmp/**','log/**','.idea/**'
   gem.files = `git ls-files`.split($\)
   gem.executables = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.test_files = gem.files.grep(%r{^(test|spec|features)/})

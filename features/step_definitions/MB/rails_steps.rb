@@ -90,7 +90,7 @@ When %r{^I append the following to "([^"]*)"} do |path, string|
 	end
 end
 When %r{^the Gemfile contains this gem$} do
-	step %{I append the following to "Gemfile"}, %{gem "musicbrainz_ruby","0.1.2",:path=>'/home/j4k4x/musicbrainz_ruby/pkg'}
+	step %{I append the following to "Gemfile"}, %{gem "musicbrainz_ruby","0.1.3"}
 end
 When %r{^I run "([^"]*)"$} do |command|
 	Dir.chdir(Cukigem.app_root) do

@@ -1,3 +1,7 @@
+tmp/
+pkg/
+log/
+.idea/
 # rcov generated
 coverage
 coverage.data

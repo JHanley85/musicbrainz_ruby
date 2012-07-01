@@ -60,6 +60,7 @@ Gem::Specification.new do |s|
     "lib/musicbrainz/work.rb",
     "lib/musicbrainz_ruby.rb",
     "log/test.log",
+    "musicbrainz_ruby.gemspec",
     "report.html",
     "spec/factories.rb",
     "spec/musicbrainz_ruby_spec.rb",

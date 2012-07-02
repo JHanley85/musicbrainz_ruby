@@ -108,7 +108,7 @@ When %r{^I start the rails application$} do
 	Dir.chdir(Cukigem.project_root)
 	Dir.chdir(Cukigem.app_root) do
 		ENV["RAILS_ENV"] = "test"
-		require "config/environment.rb"
+		require "#{Cukigem.app_root}/config/environment.rb"
 
 		if Object.const_defined?(:Capybara)
 			require "capybara/rails"
@@ -119,3 +119,18 @@ When %r{^I start the rails application$} do
 		ActiveRecord::Base.clear_all_connections!
 	end
 end
+
+When %r{^I start the rails application at "([^"]*)"$} do |path|
+	Dir.chdir(Cukigem.project_root)
+	Dir.chdir(path) do
+		ENV["RAILS_ENV"] = "test"
+		require "config/environment.rb"
+
+		if Object.const_defined?(:Capybara)
+			require "capybara/rails"
+		elsif Object.const_defined?(:Webrat)
+			require "webrat/rails"
+		end
+	end
+end
+

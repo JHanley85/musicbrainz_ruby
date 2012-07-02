@@ -14,3 +14,4 @@ Feature: Installing MusicBrainz
 	Given I have a rails application
 	And I run "rails g scaffold release title:string release_date:date mbid:string type:string"
 	And I setup the database
+	And I start the rails application

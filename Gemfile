@@ -10,6 +10,7 @@ group :development do
   gem "rspec"
   gem "rdoc"
   gem 'sprockets'
+  gem 'pickle'	
   gem 'cucumber',:require => false
   gem 'factory_girl'
 

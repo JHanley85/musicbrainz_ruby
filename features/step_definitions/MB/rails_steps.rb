@@ -133,4 +133,13 @@ When %r{^I start the rails application at "([^"]*)"$} do |path|
 		end
 	end
 end
+When %r{^I add (.+) to routes.rb$} do |string|
+
+	FileUtils.mkdir_p(File.join(Cukigem.app_root, File.dirname(path)))
+	File.open(File.join(Cukigem.app_root, "config/routes.rb"), "w") do |file|
+		file.write(string)
+	end
+
+end
+
 

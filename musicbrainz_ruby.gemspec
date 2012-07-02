@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jack"]
-  s.date = "2012-07-01"
+  s.date = "2012-07-02"
   s.description = "Musicbrainz.org API Ruby Implementation"
   s.email = ["jack@caged-media.com"]
   s.extra_rdoc_files = [
@@ -30,8 +30,10 @@ Gem::Specification.new do |s|
     "features/releases/release_query.feature",
     "features/step_definitions/MB/rails_steps.rb",
     "features/step_definitions/MB/release_steps.rb/release_steps.rb",
+    "features/step_definitions/web_steps.rb",
     "features/support/cukigem.rb",
     "features/support/env.rb",
+    "features/support/paths.rb",
     "lib/generators/music_brainz/install/initializer_generator.rb",
     "lib/generators/music_brainz/install/install_generator.rb",
     "lib/generators/music_brainz/install/templates/config/initializers/musicbrainz.rb.erb",
@@ -57,7 +59,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
   s.summary = "Make Musicbrainz API calls within RoR"
-  s.test_files = ["features/musicbrainz_ruby.feature", "features/releases/release_query.feature", "features/step_definitions/MB/rails_steps.rb", "features/step_definitions/MB/release_steps.rb/release_steps.rb", "features/support/cukigem.rb", "features/support/env.rb", "spec/factories.rb", "spec/musicbrainz_ruby_spec.rb", "spec/spec_helper.rb"]
+  s.test_files = ["features/musicbrainz_ruby.feature", "features/releases/release_query.feature", "features/step_definitions/MB/rails_steps.rb", "features/step_definitions/MB/release_steps.rb/release_steps.rb", "features/step_definitions/web_steps.rb", "features/support/cukigem.rb", "features/support/env.rb", "features/support/paths.rb", "spec/factories.rb", "spec/musicbrainz_ruby_spec.rb", "spec/spec_helper.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
@@ -67,6 +69,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rspec>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<sprockets>, [">= 0"])
+      s.add_development_dependency(%q<pickle>, [">= 0"])
       s.add_development_dependency(%q<cucumber>, [">= 0"])
       s.add_development_dependency(%q<factory_girl>, [">= 0"])
       s.add_development_dependency(%q<nokogiri>, [">= 1.5.0"])
@@ -82,6 +85,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rspec>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<sprockets>, [">= 0"])
+      s.add_dependency(%q<pickle>, [">= 0"])
       s.add_dependency(%q<cucumber>, [">= 0"])
       s.add_dependency(%q<factory_girl>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 1.5.0"])
@@ -98,6 +102,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rspec>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<sprockets>, [">= 0"])
+    s.add_dependency(%q<pickle>, [">= 0"])
     s.add_dependency(%q<cucumber>, [">= 0"])
     s.add_dependency(%q<factory_girl>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 1.5.0"])

@@ -13,6 +13,7 @@ group :development do
   gem 'pickle'	
   gem 'cucumber',:require => false
   gem 'factory_girl'
+  gem 'mechanize'
 
 
   gem "nokogiri",'>= 1.5.0'

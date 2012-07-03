@@ -49,7 +49,13 @@ When %r{^I save the following as "([^"]*)"} do |path, string|
 	FileUtils.mkdir_p(File.join(Cukigem.app_root, File.dirname(path)))
 	File.open(File.join(Cukigem.app_root, path), "w") do |file|
 		file.write(string)
+
 	end
+	File.open(File.join(Cukigem.app_root, path), "rb") do |file|
+	puts	file.read
+
+	end
+
 end
 
 

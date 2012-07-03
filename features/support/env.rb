@@ -6,11 +6,12 @@ require "#{File.expand_path(File.join(File.dirname(__FILE__), '..', '..'))}/spec
 require 'rails/all'
 require 'capybara/cucumber'
 require 'webrat'
-require "webrat"
+
 
 Webrat.configure do |config|
-	config.mode = :rails
+	config.mode = :rake
 end
+
 
 begin
 	require 'database_cleaner'

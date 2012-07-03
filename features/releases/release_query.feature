@@ -43,7 +43,7 @@ Feature: Search for information on a release, using only an mbid.
 	  """
 	  class ReleasesController < ApplicationController
 	  	def query
-	  		query=params
+	  		query=@params
 	  		@release=MusicBrainz::Release.new(query[:mbid],query[:fetch])
 		end
 	  end

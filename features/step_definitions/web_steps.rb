@@ -21,12 +21,12 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
-	case page_name
-		when "the releases page"
-			visit "/releases"
-	else
+
+
+
+
   visit path_to(page_name)
-			end
+
 end
 
 When /^(?:|I )press "([^\"]*)"(?: within "([^\"]*)")?$/ do |button, selector|

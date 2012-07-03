@@ -10,6 +10,16 @@ module NavigationHelpers
 
     when /the home\s?page/
 	      '/'
+    when /the release query page/
+	    params=Array.new
+	    @params.each do |k,v|
+		  params<<"#{k}=#{v}"
+	    end
+	    params_string=params.join('&')
+      "/releases/query?#{params_string}"
+    when "the releases page"
+		  "/releases/"
+
 	    # Add more page name => path mappings here
 	    else
 		    if path = match_rails_path_for(page_name)

@@ -39,3 +39,14 @@ Given /^there are (\d+) (.+)$/ do |n, model_str|
 		end
 	end
 end
+
+
+Given /^I query for a "(.*?)" on musicbrainz with "(.*?)" of "(.*?)"$/ do |model_str, attr, value|
+	model_str = model_str.gsub(/\s/,'_').singularize
+
+	klass = eval(model_str.camelize)
+
+
+	@params={attr=>value,:fetch=>"recordings"}
+
+end

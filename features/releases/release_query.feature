@@ -39,22 +39,23 @@ Feature: Search for information on a release, using only an mbid.
 
     Scenario:
 	  Given I query for a "release" on musicbrainz with "mbid" of "a91c7de6-0530-4d23-897c-80c02341b328"
-	  When I save the following as "app/controllers/releases_controller":
+	  When I save the following as "app/controllers/releases_controller.rb":
 	  """
 	  class ReleasesController < ApplicationController
-	  	def query
-	  		query=@params
+	  	def show
+	  		query=params
 	  		@release=MusicBrainz::Release.new(query[:mbid],query[:fetch])
 		end
 	  end
       """
 	  And I save the following as "app/views/releases/query.html.erb":
 	  """
-	  <ul>
-	  	<%@release.recordings.each do |r|%>
-	  	<li><%=r.recording['title']%></li>
-	  	<%end%>
-	  </ul>
+<ul>
+<%@release.recordings.each do |r| %>
+  <li><%=r.recording['title']%> </li>
+<%end%></ul>
+
+
 
 	"""
 	  And I save the following as "config/routes.rb"
@@ -68,5 +69,5 @@ Feature: Search for information on a release, using only an mbid.
 	end
 	"""
 	  When I start the rails application
-      And I go to the release query page
+      When I go to the release query page
 	  Then I should see "The Day I Turned to Glass"

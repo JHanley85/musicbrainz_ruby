@@ -8,19 +8,12 @@ require 'capybara/cucumber'
 require 'webrat'
 
 
+
 Webrat.configure do |config|
 	config.mode = :rake
 end
 
-
-begin
-	require 'database_cleaner'
-	require 'database_cleaner/cucumber'
-	DatabaseCleaner.strategy = :truncation
-	Capybara.default_selector = :css
-rescue NameError
-	raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
-end
+Capybara.default_selector = :css
 
 
 Spork.prefork do
